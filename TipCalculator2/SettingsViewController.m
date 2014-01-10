@@ -46,7 +46,7 @@
 - (void) setDefaults {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     int defaultTipIndex = [defaults integerForKey:@"defaultTipPercentageIndex"];
-    if (defaultTipIndex < 0 || defaultTipIndex > self.defaultTipPercentageControl.numberOfSegments) {
+    if (defaultTipIndex < 0 || defaultTipIndex >= self.defaultTipPercentageControl.numberOfSegments) {
         self.defaultTipPercentageControl.selectedSegmentIndex = 1;
         [self updateDefaults];
     } else {
